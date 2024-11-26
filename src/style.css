@@ -891,11 +891,328 @@ footer > p {
   }
 }
 
+.fixed-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000; /* Black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  gap: 300px; /* Default gap for larger screens */
+}
+ 
+.scrollable-list {
+  max-height: 280px; /* Ensures the box is scrollable */
+  overflow-y: auto;
+  margin: 20px;
+  padding: 10px 15px; /* Adds padding inside the container */
+  border: 1px solid #ccc; /* Border for the container */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light gray background */
+}
+
+.scrollable-list ol {
+  list-style-type: decimal; /* Ensures numbered list */
+  margin: 0;
+  padding-left: 25px; /* Adjusts indentation of numbers */
+}
+
+.scrollable-list ol li {
+  margin-bottom: 10px; /* Adjusts spacing between list items */
+  font-size: 16px; /* Adjusts font size */
+  line-height: 1.5; /* Improves readability */
+}
+
+.scrollable-list ol li:last-child {
+  margin-bottom: 0; /* Removes extra spacing below the last item */
+}
+
+.scrollable-list h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 15px; /* Space between heading and list */
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+.fixed-search-label {
+  display: flex;
+  align-items: center;
+}
+
+#fixed-search-input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 100%; /* Allow input to grow on smaller screens */
+  max-width: 400px; /* Cap input size on larger screens */
+}
+
+
+
+#fixed-search-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff; /* White text */
+  background-color: #000; /* Black background */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+#fixed-search-btn:hover {
+  background-color: #333; /* Slightly lighter black for hover effect */
+}
+
+/* Media Query for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  .fixed-bottom-bar {
+    gap: 50px; /* Reduce gap on smaller screens */
+    padding: 10px 20px; /* Add padding for better spacing */
+  }
+
+  #fixed-search-input {
+    max-width: 300px; /* Adjust input width */
+  }
+
+  #fixed-search-btn {
+    padding: 8px 12px; /* Slightly smaller padding for button */
+  }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 480px) {
+  .fixed-bottom-bar {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Small gap for vertical stacking */
+  }
+
+  #fixed-search-input {
+    max-width: 100%; /* Full width for input on mobile */
+    margin-bottom: 10px; /* Add space below the input */
+  }
+
+  #fixed-search-btn {
+    width: 100%; /* Full-width button on mobile */
+  }
+}
+
+/* Flexbox layout for the columns */
+.product-info-aside-content {
+  display: flex;
+  gap: 50px; /* Horizontal gap between columns */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  justify-content: space-between; /* Aligns columns properly */
+}
+
+/* Unordered list styling */
+.product-info-aside-content ul {
+  list-style-type: disc; /* Ensures bullet points */
+  padding-left: 20px; /* Indent for bullets */
+  flex: 1; /* Ensures columns take equal width */
+  min-width: 250px; /* Prevents columns from shrinking too much */
+}
+
+/* Individual list items */
+
+.li-description li {
+  margin-top: 50px;
+  margin-bottom: 50px; /* Adds vertical spacing between items */
+}
+
+
+.li-description strong {
+  display: inline-block; /* Allows setting width or margin */
+  width: 150px; /* Fixed width for uniform alignment */
+  margin-right: 50px; /* Gap between the <strong> and text */
+  font-weight: bold;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .product-info-aside-content {
+    flex-direction: column; /* Stacks lists vertically */
+    gap: 20px; /* Reduces gap for smaller screens */
+  }
+
+  .li-description li {
+    margin-top: 10px;
+    margin-bottom: 10px; /* Adds vertical spacing between items */
+  }
+
+  .li-description strong {
+    width: 120px; /* Reduce the gap width for smaller screens */
+    margin-right: 20px; /* Smaller gap between label and text */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-info-aside-content {
+    gap: 15px; /* Further reduce gap for very small screens */
+  }
+
+  .li-description strong {
+    width: auto; /* Allow labels to adjust naturally */
+    margin-right: 10px; /* Smallest possible gap */
+  }
+
+  .li-description li {
+    margin-top: 10px;
+    margin-bottom: 10px; /* Adds vertical spacing between items */
+  }
+
+  .li-description ul {
+    padding-left: 10px; /* Reduce padding for compact view */
+  }
+
+  .li-description li {
+    font-size: 14px; /* Slightly smaller text for small screens */
+  }
+}
+
+
+
 @media (min-width: 1240px) {
   .max-width-lg-container-parts {
     flex-direction: row;
     align-items: flex-start;
     margin-top: 1rem;
+  }
+
+  .term-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  .flat-box-wrapper {
+    max-width: 800px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .flat-box-wrapper h2 {
+    font-size: 20px;
+    width: 100%;
+    text-decoration: underline;
+    
+  }
+
+  .flat-box-wrapper strong {
+    display: inline-block; /* Allows setting width or margin */
+    font-weight: bold;
+  }
+
+  .flat-box-wrapper span {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+    
+  .flat-box-wrapper p {
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0;
+  }
+
+  .youtube-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 80%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  .youtube-icon img {
+    width: 100%;
+    height: auto;
+  }
+
+  .parts-main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .military-term-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+  }
+
+  .term-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .term-box h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .term-box p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .term-box {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .flat-box-wrapper {
+      padding: 20px;
+    }
+
+    .flat-box-wrapper span {
+      font-weight: bold;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .youtube-icon {
+      position: static;
+      transform: none;
+      margin-top: 15px;
+    }
+
+    .youtube-icon img {
+      width: 45px;
+      height: 45px;
+    }
   }
 
   footer {
@@ -913,5 +1230,62 @@ footer > p {
   }
   footer > ul > *:not(:first-child) {
     padding-left: 16px;
+  }
+}
+
+
+/* General styles for the detailed-description section */
+.detailed-description {
+  padding: 20px;
+  margin-top: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+}
+
+.detailed-description h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+.detailed-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .detailed-description {
+    padding: 15px;
+  }
+
+  .detailed-description h2 {
+    font-size: 1.2rem;
+    margin-top: auto;
+  }
+
+  .detailed-description p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detailed-description {
+    padding: 10px;
+  }
+
+  .detailed-description h2 {
+    font-size: 1rem;
+  }
+
+  .detailed-description p {
+    font-size: 0.85rem;
   }
 }
