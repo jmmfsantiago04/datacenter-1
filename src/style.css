@@ -924,7 +924,7 @@ footer > p {
 .scrollable-list {
   max-height: 280px; /* Ensures the box is scrollable */
   overflow-y: auto;
-  margin: 20px;
+  margin: 2px;
   padding: 10px 15px; /* Adds padding inside the container */
   border: 1px solid #ccc; /* Border for the container */
   border-radius: 8px; /* Rounded corners */
@@ -1103,7 +1103,7 @@ footer > p {
     padding: 30px;
   }
   .flat-box-wrapper {
-    max-width: 800px;
+    max-width: 700px;
     background: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -1247,6 +1247,7 @@ footer > p {
   margin-top: 20px;
   font-family: "Noto Sans KR", sans-serif;
   color: #333;
+  gap: 50px;
 }
 
 .detailed-description h2 {
