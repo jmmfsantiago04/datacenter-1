@@ -894,16 +894,32 @@ footer > p {
 .fixed-bottom-bar {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  background-color: #000; /* Black background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  gap: 300px; /* Default gap for larger screens */
+  left: 0;
+  right: 0;
+  background-color: var(--black);
+  padding: 1rem var(--padding-x-clamp);
+  height: 5rem;
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+  }
 }
+
+.fixed-bottom-content {
+  max-width: var(--max-screen-width-rem);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 1rem;
+  position: relative;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
  
 .scrollable-list {
   max-height: 280px; /* Ensures the box is scrollable */
@@ -939,70 +955,61 @@ footer > p {
   text-decoration: underline;
   padding-bottom: 5px;
 }
-.fixed-search-label {
-  display: flex;
-  align-items: center;
-}
-
-#fixed-search-input {
-  padding: 8px 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  width: 100%; /* Allow input to grow on smaller screens */
-  max-width: 400px; /* Cap input size on larger screens */
-}
-
 
 
 #fixed-search-btn {
-  padding: 8px 16px;
-  font-size: 14px;
-  color: #fff; /* White text */
-  background-color: #000; /* Black background */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  flex-shrink: 0; /* Prevent button from shrinking */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 0;
+  font-weight: 500;
+  margin-left: auto;
+  width: 120px;
+  justify-content: center;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+
 }
 
 #fixed-search-btn:hover {
   background-color: #333; /* Slightly lighter black for hover effect */
 }
 
-/* Media Query for Tablets and Smaller Screens */
-@media (max-width: 768px) {
-  .fixed-bottom-bar {
-    gap: 50px; /* Reduce gap on smaller screens */
-    padding: 10px 20px; /* Add padding for better spacing */
-  }
+.search-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
 
-  #fixed-search-input {
-    max-width: 300px; /* Adjust input width */
-  }
-
-  #fixed-search-btn {
-    padding: 8px 12px; /* Slightly smaller padding for button */
+  @media (max-width: 768px) {
+    position: static;
+    transform: none;
+    flex: 1; /* Take up remaining space */
   }
 }
 
-/* Media Query for Mobile Screens */
-@media (max-width: 480px) {
-  .fixed-bottom-bar {
-    flex-direction: column; /* Stack elements vertically */
-    gap: 10px; /* Small gap for vertical stacking */
-  }
-
-  #fixed-search-input {
-    max-width: 100%; /* Full width for input on mobile */
-    margin-bottom: 10px; /* Add space below the input */
-  }
-
-  #fixed-search-btn {
-    width: 100%; /* Full-width button on mobile */
-  }
+.search-container   input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border-radius: 0;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
 }
+
+.search-container input::placeholder {
+  color: #888;
+}
+
+
 
 /* Flexbox layout for the columns */
 .product-info-aside-content {
